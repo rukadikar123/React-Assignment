@@ -9,7 +9,7 @@ function ProfileList() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 mt-28">
       {profiles?.map((item) => {
         return (
           <div
@@ -21,7 +21,7 @@ function ProfileList() {
             <div>
               <button
                 onClick={() => navigate(`/profile/${item?.id}`)}
-                className="border bg-blue-300 py-2 px-4 hover:bg-blue-400 text-gray-900"
+                className="border bg-blue-300 py-2 px-4 hover:bg-blue-400 font-semibold text-gray-900"
               >
                 Profile details here
               </button>

@@ -21,23 +21,23 @@ function ProfileDetails() {
   return (
     <div>
       {
-        <div className="border border-green-500 p-4 ">
+        <div className="border border-green-500  p-8 mt-36 ">
           <div className="flex gap-40">
             <div className="flex flex-col gap-4">
-              <h1>
+              <h1 className="text-lg">
                 <span className="font-bold">Name:</span> {profile?.name}
               </h1>
-              <p>
+              <p className="text-lg">
                 <span className="font-bold">description:</span>{" "}
                 {profile.description}
               </p>
             </div>
-            <p>
+            <p className="text-lg">
               <span className="font-bold">Address:</span> {profile?.address}
             </p>
           </div>
           <button
-            className="border mt-6 font-bold bg-blue-300 py-2 px-4 hover:bg-blue-400 text-gray-900"
+            className="border mt-6 rounded-md font-bold bg-blue-300 py-2 px-4 hover:bg-blue-400 text-gray-900"
             onClick={() => setSelectedProfile(profile)}
           >
             Click here to open map
