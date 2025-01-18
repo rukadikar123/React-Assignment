@@ -9,8 +9,8 @@ function App() {
     <>
       <BrowserRouter>
         <nav className="flex items-center justify-between mx-60 my-4">
-          <Link  to="/">Home</Link>
-          <Link to="/admin">Admin panel</Link>
+          <Link  className="font-semibold text-xl cursor-pointer hover:text-gray-500" to="/">Home</Link>
+          <Link className="font-semibold text-xl cursor-pointer hover:text-gray-500" to="/admin">Admin panel</Link>
         </nav>
         <Routes>
           <Route path="/" element={<ProfileList/>} />
