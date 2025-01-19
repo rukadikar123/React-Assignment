@@ -21,8 +21,8 @@ function ProfileDetails() {
   return (
     <div>
       {
-        <div className="border border-green-500  p-8 mt-36 ">
-          <div className="flex gap-40">
+        <div className="border border-green-500 p-4 md:p-8 my-36 ">
+          <div className="flex md:flex-row flex-col  gap-4 md:gap-40">
             <div className="flex flex-col gap-4">
               <h1 className="text-lg">
                 <span className="font-bold">Name:</span> {profile?.name}

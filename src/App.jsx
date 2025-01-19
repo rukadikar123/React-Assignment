@@ -6,6 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
 import { useState } from "react";
+import Footer from "./Footer.jsx";
 
 function App() {
   const [user, setUser]=useState(null)
@@ -15,9 +16,9 @@ function App() {
     <>
       <BrowserRouter>
         <nav className="fixed top-0 left-0 w-full bg-white shadow-md">
-          <div className="flex items-center  top-4 justify-between mx-60 my-8">
+          <div className="flex items-center  top-4 justify-between mx-4 md:mx-60 my-8">
             <Link
-              className="font-semibold text-xl cursor-pointer hover:text-gray-500"
+              className="font-semibold text-lg md:text-xl cursor-pointer hover:text-gray-500"
               to="/"
             >
               Home
@@ -33,7 +34,15 @@ function App() {
               </button>
             </div>
             <Link
-              className={`font-semibold text-xl ${user ? 'hidden': 'block' } cursor-pointer hover:text-gray-500`}
+              className={`font-semibold text-lg md:text-xl  cursor-pointer hover:text-gray-500`}
+              to="/admin" 
+              onClick={()=> !user && alert("please login to access admin")}
+          
+            >
+              Admin panel
+            </Link>
+            <Link
+              className={`font-semibold text-lg md:text-xl  ${user ? 'hidden': 'block' } cursor-pointer hover:text-gray-500`}
               to="/login" 
               onClick={()=> !user && alert("please login to access admin")}
           
@@ -49,6 +58,7 @@ function App() {
             </Link>
           </div>
         </nav>
+        <Footer/>
         <Routes>
           <Route path="/" element={<ProfileList />} />
           <Route path="/profile/:id" element={<ProfileDetails />} />
