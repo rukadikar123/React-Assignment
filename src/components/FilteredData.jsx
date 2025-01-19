@@ -1,16 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
-function ProfileList() {
-  const profiles = useSelector((state) => state.profiles);
-  console.log(profiles);
+function FilteredData() {
 
-  const navigate = useNavigate();
+  const filteredProfiles=useSelector(state=> state.FilteredData)
+  console.log(filteredProfiles);
+  
+  const navigate=useNavigate()
 
   return (
-    <div className="grid grid-cols-1 my-40 md:grid-cols-3 gap-4">
-          {profiles.map((profile) => (
+    <div>
+        <div className="grid grid-cols-1 my-40 md:grid-cols-3 gap-4">
+          {filteredProfiles.map((profile) => (
             <div
               key={profile.id}
               className="border rounded-lg p-4 shadow hover:shadow-lg transition"
@@ -30,8 +32,10 @@ function ProfileList() {
               </div>
             </div>
           ))}
-        </div>
-  );
+        </div>  
+      
+    </div>
+  )
 }
 
-export default ProfileList;
+export default FilteredData
