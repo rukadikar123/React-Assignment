@@ -93,7 +93,7 @@ function Admin({user}) {
   return (
     <>
       {
-        user && <div className="p-8 my-32">
+        user ? <div className="p-8 my-32">
         <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
 
         {/* Form Section */}
@@ -202,7 +202,7 @@ function Admin({user}) {
             </div>
           ))}
         </div>
-      </div>
+      </div> : <p className="mt-80 text-center text-2xl">Please login first</p>
       }
     </>
   );
