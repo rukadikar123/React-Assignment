@@ -3,12 +3,13 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function ProfileList() {
-  const profiles = useSelector((state) => state.profiles);
-  console.log(profiles);
+  const profiles = useSelector((state) => state.profiles);   // Retrieve profiles from the profileSlice of the Redux store
+  // console.log(profiles);
 
   const navigate = useNavigate();
 
   return (
+    // Profile List section
     <div className="grid grid-cols-1 my-40 md:grid-cols-3 gap-4">
           {profiles.map((profile) => (
             <div

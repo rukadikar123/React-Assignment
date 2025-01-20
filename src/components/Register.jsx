@@ -4,15 +4,17 @@ import { app } from "../firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");             //initialize state variable email
+  const [password, setPassword] = useState("");       //initialize state variable password
 
   const navigate = useNavigate();
 
+    // handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const auth = getAuth(app);
+  
+    const auth = getAuth(app);        // Initialize Firebase authentication instance
+    
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         console.log(res);
@@ -24,6 +26,7 @@ function Register() {
   };
 
   return (
+    // SignUp UI Component
     <>
       <div className="h-full flex  items-center justify-center mt-44 w-full">
         <div className="border-2 rounded-md border-red-300 h-full py-4 w-[65%] mx-6 md:mx-0 md:w-[25vw] flex flex-col bg-slate-100 text-black items-start gap-6 justify-start px-6 ">

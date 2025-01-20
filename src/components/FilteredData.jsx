@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 function FilteredData() {
 
-  const filteredProfiles=useSelector(state=> state.FilteredData)
+  const filteredProfiles=useSelector(state=> state.FilteredData)    // Retrieve filtered profiles from the profileSlice of the Redux store
   console.log(filteredProfiles);
   
   const navigate=useNavigate()
 
   return (
+    {/* Filtered Profiles List */}
     <div>
         <div className="grid grid-cols-1 my-40 md:grid-cols-3 gap-4">
           {filteredProfiles.map((profile) => (

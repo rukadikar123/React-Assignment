@@ -5,14 +5,15 @@ import Map from "./Map.jsx";
 import Mapmodel from "./Mapmodel.jsx";
 
 function ProfileDetails() {
-  const { id } = useParams();
+  const { id } = useParams();             // get Profile id from url params
 
   const [selectedProfile, setSelectedProfile] = useState(null);
 
-  const Profiles = useSelector((state) => state.profiles);
+  const Profiles = useSelector((state) => state.profiles);       //Retrieve profiles from the profileSlice of the Redux store
   console.log(Profiles);
 
-  const profile = Profiles.find((item) => item.id === parseInt(id));
+  // Find and retrieve the profile object from the Profiles array based on the matching ID
+  const profile = Profiles.find((item) => item.id === parseInt(id));    
   console.log(profile);
 
   if (!profile) {
@@ -20,6 +21,7 @@ function ProfileDetails() {
   }
   return (
     <div>
+      {/* profile details section */}
       {
         <div className="border border-green-500 p-4 md:p-8 my-48 ">
           <div className="flex md:flex-row flex-col  gap-4 md:gap-40">

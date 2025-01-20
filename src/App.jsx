@@ -17,12 +17,13 @@ import FilteredData from "./components/FilteredData.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);  // initialize state variable
   
 
 
   return (
     <>
+    {/* Routing Configuration */}
       <BrowserRouter>
         <Navbar user={user} setUser={setUser} />
         <Footer />

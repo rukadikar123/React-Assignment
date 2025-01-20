@@ -6,21 +6,23 @@ import { useDispatch, } from 'react-redux';
 import { getSearchData,  } from '../redux/ProfileSlice';
 
 function Navbar({user , setUser}) {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchData, setSearchData]=useState("")
+    const [isMenuOpen, setIsMenuOpen] = useState(false);   //initialize state variable
+  const [searchData, setSearchData]=useState("")           //initialize state variable
 
   
   const navigate=useNavigate()
   const dispatch=useDispatch()
 
+  // handle form submit
   const handleSubmit=(e)=>{
     e.preventDefault()
 
+    // Redirect to filtered data page and dispatch search data action if search query is present
     if(searchData){
         dispatch(getSearchData(searchData))
     navigate("/fitered-data")
     }
-    setSearchData("")
+    setSearchData("")       //make searchData state var empty
   }
 
 
@@ -35,6 +37,8 @@ function Navbar({user , setUser}) {
             >
               Home
             </Link>
+
+             {/* Form section */}
             <form onSubmit={(e)=>handleSubmit(e)} className="flex items-center">
               <input
                 type="text"

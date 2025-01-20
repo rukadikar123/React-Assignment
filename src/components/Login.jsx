@@ -4,15 +4,17 @@ import { app } from "../firebase";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 function Login({ setUser }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");             //initialize state variable email
+  const [password, setPassword] = useState("");       //initialize state variable password
 
   const navigate = useNavigate();
 
+  // handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const auth = getAuth(app);
+    const auth = getAuth(app);    // Initialize Firebase authentication instance
+
     signInWithEmailAndPassword(auth, email, password).then((res) => {
       console.log(res);
 
@@ -22,6 +24,7 @@ function Login({ setUser }) {
   };
 
   return (
+    // Login UI Component
     <div className="h-full flex  items-center justify-center mt-40 w-full">
       <div className="border-2 rounded-md border-red-300 h-full md:mx-0 mx-6 py-6 w-[60%] md:w-[25vw] flex flex-col bg-slate-100 text-black items-start gap-6 justify-start px-6 ">
         <h1 className="font-bold  text-[25px] mt-2">Log In</h1>
