@@ -25,7 +25,7 @@ const ProfileSlice=createSlice({
             }
         },
         deleteProfile:(state, action)=>{
-            state.profiles=state.profiles.filter(item => item.id !== action.payload.id)
+            state.profiles=state.profiles.filter(item => item.id !== action.payload)
             localStorage.setItem("profiles", JSON.stringify(state.profiles))
         },
         selectedProfile:(state, action)=>{
